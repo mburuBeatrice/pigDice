@@ -116,29 +116,89 @@ $(document).ready(function() {
 
 	//2.constructore function
 
-	function Player(score ,totalscore){
-		this.score=score;
-		this.totalscore=score;
+	function Player(name){
+		this.name = name;
+		this.turnscore=0;
+		this.totalscore=0;
+		//this.numberOfRolls = 0;
 
 	}
+
+	// var GamerOne = new Player ("karis");
+	// console.log(GamerOne);
+
+	Player.prototype.roll = function(){
+
+	    var	rollvalue =Math.floor((Math.random() * 6) + 1);
+	    if(rollvalue===0){
+	    	this.totalscore=0;
+	    }else{
+	    	this.totalscore+=rollvalue;
+	    }
+
+	    return rollvalue;
+
+		
+	};
+
+	Player.prototype.hold = function(){
+	 	this.totalscore+=this.turnscore;
+	 	this.turnscore=0;		
+	};
+
+	
+
+	// var playerone = new Player(3,20)
+	// console.log(playerone);
 
 
 
 	//3.function for Computation
 
-	function check(args){
-		args=parseInt(args);
-		if (args!=(1||6)) {
-			return args;
-		}else{
-			return 0;
-		}
-	}
-	//4:adding score
+	// function check(args){
+	// 	args=parseInt(args);
+	// 	if (args!=(1||6)) {
+	// 		return args;
+	// 	}else{
+	// 		return 0;
+	// 	}
+	// }
 	
+	//4:adding score
+
+	
+	// function sum(value){
+	// 	var first = 0;
+	// 	return first+=value;
+
+	// }
+
+	var game = {
+		initialscore:0,
+		newscore:function(val){
+			return this.initialscore+val;
+		},
+		incre:function(foo){
+			return this.newscore+=foo;
+		}
 
 
-console.log(check(generateNUm()));
+	}
+
+
+	//console.log(game.incre(generateNUm()));
+
+
+
+
+	//5.stop project reset  score to zero
+
+
+
+
+
+
+	// console.log(check((generateNUm())));
 	
 	
 
