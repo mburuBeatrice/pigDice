@@ -135,10 +135,7 @@ $(document).ready(function() {
 		}
 	}
 	//4:adding score
-
-	 
-
-		function 
+	
 
 
 console.log(check(generateNUm()));
