@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
 
-	//here we will do some clean up on the playernumone input field
-	//here we will do some clean up on the playernumone input field
 	$("#playernumone").click(function() {
 		$(this).val("");
 		$("#warningone").text("");
@@ -16,35 +14,19 @@ $(document).ready(function() {
 		$("#p-two").text("...");
 	});
 
-
-	//here we will do some clean up on the playernumone input field
-	//here we will do some clean up on the playernumone input field
-
-	//*****************//
-
-	// obtaining player one name
 	function getplayerone(){
 		return document.getElementById("playernumone").value;
 	}
-	// end fxn->obtaining player one name
-	// end fxn->obtaining player one name
 
-		//***********************//
-	//obtaining player two name
 	function getplayertwo(){
 		return document.getElementById("playernumtwo").value;
 	}
 
-	//end of this function->obtaining player two name
-
-
-	//this is just setting player one name on the homescreen
 	function setplayerone(playerone){
 		document.getElementById("p-one").innerHTML=playerone;
 	}
 
 
-	//this is just setting player two on the homescreen
 
 	function setplayertwo(playertwo){
 		document.getElementById("p-two").innerHTML=playertwo;
@@ -59,7 +41,7 @@ $(document).ready(function() {
 			document.getElementById("playernumone").focus();
 		}else{
 			$("#p-one").text(getplayerone());
-			//begins logic for rolling dice player one
+
 
 			$("#p1score").text(generateNUm());
 
@@ -105,28 +87,17 @@ $(document).ready(function() {
 
 	});
 
-
-
-
-	//functions for the game
-	//1.generate
 	function generateNUm(){
 		return Math.floor((Math.random() * 6) + 1);
 	}
-
-	//2.constructore function
 
 	function Player(name){
 		this.name = name;
 		this.turnscore=0;
 		this.totalscore=0;
-		//this.numberOfRolls = 0;
+
 
 	}
-
-	// var GamerOne = new Player ("karis");
-	// console.log(GamerOne);
-
 
 
 	Player.prototype.roll = function(){
@@ -151,32 +122,8 @@ $(document).ready(function() {
 	var gamerplayerone = new Player("karis");
 	console.log(gamerplayerone.roll());
 					function sum(){
-						
+
 					}
-	// var playerone = new Player(3,20)
-	// console.log(playerone);
-
-
-
-	//3.function for Computation
-
-	// function check(args){
-	// 	args=parseInt(args);
-	// 	if (args!=(1||6)) {
-	// 		return args;
-	// 	}else{
-	// 		return 0;
-	// 	}
-	// }
-
-	//4:adding score
-
-
-	// function sum(value){
-	// 	var first = 0;
-	// 	return first+=value;
-
-	// }
 
 	var game = {
 		initialscore:0,
@@ -189,27 +136,4 @@ $(document).ready(function() {
 
 
 	}
-
-
-	//console.log(game.incre(generateNUm()));
-
-
-
-
-	//5.stop project reset  score to zero
-
-
-
-
-
-
-	// console.log(check((generateNUm())));
-
-
-
-
-
-
-
-
 });
