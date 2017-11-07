@@ -62,8 +62,8 @@ $(document).ready(function() {
 			//begins logic for rolling dice player one
 
 			$("#p1score").text(generateNUm());
-		
-		}	
+
+		}
 	});
 
 
@@ -78,7 +78,7 @@ $(document).ready(function() {
 			//begin logiv for rolling dic for player two
 
 			$("#p2score").text(generateNUm());
-		
+
 		}
 	});
 
@@ -89,7 +89,7 @@ $(document).ready(function() {
 			$("#warningone").text("Enter Username");
 		}else{
 			setplayertwo(getplayertwo());
-		}		
+		}
 		setplayertwo(getplayertwo())
 	});
 
@@ -101,8 +101,8 @@ $(document).ready(function() {
 		}else{
 			setplayerone(getplayerone());
 		}
-		
-		
+
+
 	});
 
 
@@ -127,9 +127,11 @@ $(document).ready(function() {
 	// var GamerOne = new Player ("karis");
 	// console.log(GamerOne);
 
+
+
 	Player.prototype.roll = function(){
 
-	    var	rollvalue =Math.floor((Math.random() * 6) + 1);
+	    var	rollvalue =generateNUm();
 	    if(rollvalue===0){
 	    	this.totalscore=0;
 	    }else{
@@ -138,16 +140,19 @@ $(document).ready(function() {
 
 	    return rollvalue;
 
-		
+
 	};
 
 	Player.prototype.hold = function(){
 	 	this.totalscore+=this.turnscore;
-	 	this.turnscore=0;		
+	 	this.turnscore=0;
 	};
 
-	
-
+	var gamerplayerone = new Player("karis");
+	console.log(gamerplayerone.roll());
+					function sum(){
+						
+					}
 	// var playerone = new Player(3,20)
 	// console.log(playerone);
 
@@ -163,10 +168,10 @@ $(document).ready(function() {
 	// 		return 0;
 	// 	}
 	// }
-	
+
 	//4:adding score
 
-	
+
 	// function sum(value){
 	// 	var first = 0;
 	// 	return first+=value;
@@ -199,8 +204,8 @@ $(document).ready(function() {
 
 
 	// console.log(check((generateNUm())));
-	
-	
+
+
 
 
 
@@ -208,4 +213,3 @@ $(document).ready(function() {
 
 
 });
-
